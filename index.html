@@ -104,15 +104,18 @@ section { padding-block: 56px; border-top: 1px dashed var(--line); }
 .later .t { font-family: var(--font-display); font-size: 17px; flex: 1 1 14em; min-width: 0; }
 
 /* friends */
-.friends { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 20px; }
-.friend { display: grid; grid-template-rows: 190px auto; gap: 10px; }
-.friend img { height: 190px; width: 100%; object-fit: contain; max-width: 100%; transition: transform .4s ease; }
+.friends { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 28px 18px; }
+.friend { display: grid; grid-template-rows: 170px auto; gap: 8px; align-content: start; }
+.friend img { height: 170px; width: 100%; object-fit: contain; max-width: 100%; transition: transform .4s ease; }
 .friend:hover img { transform: rotate(-4deg) translateY(-4px); }
 @media (prefers-reduced-motion: reduce) { .friend img { transition: none; } .friend:hover img { transform: none; } }
-.friend.lead { grid-column: span 2; grid-row: span 2; grid-template-rows: 1fr auto; background: var(--paper-2); border-radius: 18px; padding: 24px; }
-.friend.lead img { height: 100%; min-height: 360px; max-height: 470px; }
-.friend.lead h3 { font-size: 30px; }
-.friend.lead p { font-size: 16px; color: var(--ink); }
+.friend.main-char { grid-column: 1 / -1; grid-template-columns: 240px minmax(0, 1fr); grid-template-rows: 1fr auto auto auto 1fr; gap: 8px 32px; background: var(--paper-2); border-radius: 18px; padding: 20px 28px; }
+.friend.main-char img { grid-row: 1 / -1; height: 240px; }
+.friend.main-char .mix { grid-column: 2; grid-row: 2; }
+.friend.main-char h3 { grid-column: 2; grid-row: 3; }
+.friend.main-char p { grid-column: 2; grid-row: 4; }
+.friend.main-char h3 { font-size: 28px; }
+.friend.main-char p { font-size: 16px; color: var(--ink); max-width: 34em; }
 .friend .mix { font-size: 13px; color: var(--brass); letter-spacing: .06em; }
 .friend h3 { font-size: 22px; }
 .friend p { font-size: 15px; color: var(--ink-soft); line-height: 1.75; }
@@ -145,14 +148,16 @@ footer { padding-block: 32px 48px; border-top: 1px dashed var(--line); font-size
   .story { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .book1 { max-width: 240px; }
   .next { grid-template-columns: minmax(0, 1fr); }
-  .friends { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .friend.lead { grid-row: auto; }
-  .friend.lead img { min-height: 0; height: 280px; }
+  .friends { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 520px) {
   body { font-size: 16px; }
   .nextbook { grid-template-columns: 100px minmax(0, 1fr); }
-  .friends, .points, .plays { grid-template-columns: minmax(0, 1fr); }
+  .friends { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .points, .plays { grid-template-columns: minmax(0, 1fr); }
+  .friend.main-char { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto; padding: 20px; }
+  .friend.main-char img, .friend.main-char .mix, .friend.main-char h3, .friend.main-char p { grid-column: auto; grid-row: auto; }
+  .friend.main-char img { height: 200px; }
   .hero-img { aspect-ratio: 2 / 1; }
 }
 </style>
@@ -284,7 +289,7 @@ footer { padding-block: 32px 48px; border-top: 1px dashed var(--line); font-size
       <p>みんな「工具」と「虫」の組み合わせでできています。</p>
     </div>
     <div class="friends">
-      <article class="friend lead">
+      <article class="friend main-char">
         <img src="img/nejihachi.png" alt="ネジハチ">
         <span class="mix">主人公 ・ ねじ × ミツバチ</span>
         <h3>ネジハチ</h3>
