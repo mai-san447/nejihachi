@@ -71,25 +71,34 @@ section { padding-block: 56px; border-top: 1px dashed var(--line); }
 .sec-head h2 { font-size: clamp(26px, 4vw, 34px); }
 .sec-head p { color: var(--ink-soft); }
 
-/* story */
-.story { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 40px; align-items: start; }
+/* story：表紙は本の形に見せ、右に情報の表 */
+.story { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 48px; align-items: start; }
 .story-text { display: grid; gap: 16px; max-width: 34em; }
 .kurukuru { font-family: var(--font-display); font-size: 22px; color: var(--brass); }
-.book1 { width: 100%; max-width: 300px; border-radius: 6px; box-shadow: 0 10px 30px rgb(0 0 0 / .18); }
-.price { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; font-size: 15px; margin-top: 8px; font-variant-numeric: tabular-nums; }
-.price dt { color: var(--ink-soft); }
-.price dd { margin: 0; }
+.bookshot { margin: 0; position: relative; justify-self: center; }
+.book1 { display: block; width: 100%; max-width: 300px; border-radius: 2px 8px 8px 2px; box-shadow: inset 6px 0 8px -4px rgb(0 0 0 / .35), 0 18px 34px rgb(0 0 0 / .22), 0 4px 8px rgb(0 0 0 / .12); }
+.spec { display: grid; grid-template-columns: auto minmax(0, 1fr); margin: 8px 0 0; border-top: 1px solid var(--line); font-size: 15px; font-variant-numeric: tabular-nums; }
+.spec dt, .spec dd { padding: 10px 0; border-bottom: 1px solid var(--line); margin: 0; }
+.spec dt { color: var(--ink-soft); padding-right: 20px; white-space: nowrap; }
 
-/* shelf */
-.shelf { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; }
-.vol { display: grid; gap: 10px; align-content: start; }
-.cover { aspect-ratio: 5 / 8; width: 100%; max-width: 100%; border-radius: 6px; object-fit: cover; background: var(--paper-2); }
-.cover.blank { display: grid; place-items: center; border: 2px dashed var(--line); color: var(--ink-soft); font-size: 14px; text-align: center; padding: 12px; }
-.vol .no { font-size: 13px; letter-spacing: .1em; color: var(--brass); }
-.vol h3 { font-size: 17px; }
-.vol p { font-size: 14px; color: var(--ink-soft); line-height: 1.7; }
+/* sample：試し読み。横にすべらせて見る */
+.samples { display: grid; grid-auto-flow: column; grid-auto-columns: min(78%, 520px); gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; }
+.samples figure { margin: 0; scroll-snap-align: start; display: grid; gap: 8px; }
+.samples img { width: 100%; border-radius: 6px; box-shadow: 0 6px 18px rgb(0 0 0 / .14); }
+.samples figcaption { font-size: 14px; color: var(--ink-soft); }
+
+/* series：次の本は小さめの表紙と、本文の書き出し */
+.next { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.nextbook { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 18px; align-items: start; }
+.nextbook img { width: 100%; border-radius: 2px 6px 6px 2px; box-shadow: inset 4px 0 6px -3px rgb(0 0 0 / .35), 0 8px 18px rgb(0 0 0 / .18); }
+.nextbook > div { display: grid; gap: 8px; align-content: start; }
+.nextbook h3 { font-size: 19px; }
+.tease { font-family: var(--font-display); font-size: 15px; line-height: 1.9; color: var(--ink-soft); }
+.no { font-size: 13px; letter-spacing: .1em; color: var(--brass); }
 .tag { justify-self: start; font-size: 12px; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink-soft); }
-.tag.soon { border-color: var(--honey); color: var(--ink); background: color-mix(in srgb, var(--honey) 22%, transparent); }
+.later { list-style: none; padding: 0; margin: 28px 0 0; border-top: 1px solid var(--line); }
+.later li { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.later .t { font-family: var(--font-display); font-size: 17px; flex: 1 1 14em; min-width: 0; }
 
 /* friends */
 .friends { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 20px; }
@@ -118,14 +127,14 @@ section { padding-block: 56px; border-top: 1px dashed var(--line); }
 footer { padding-block: 32px 48px; border-top: 1px dashed var(--line); font-size: 13px; color: var(--ink-soft); }
 
 @media (max-width: 860px) {
-  .story { grid-template-columns: minmax(0, 1fr); }
+  .story { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .book1 { max-width: 240px; }
-  .shelf { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .next { grid-template-columns: minmax(0, 1fr); }
   .friends, .points { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 520px) {
   body { font-size: 16px; }
-  .shelf { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nextbook { grid-template-columns: 100px minmax(0, 1fr); }
   .friends, .points { grid-template-columns: minmax(0, 1fr); }
   .hero-img { aspect-ratio: 2 / 1; }
 }
@@ -166,6 +175,9 @@ footer { padding-block: 32px 48px; border-top: 1px dashed var(--line); font-size
 
   <section id="story">
     <div class="story">
+      <figure class="bookshot">
+        <img class="book1" src="img/book1.jpg" alt="『ネジハチと かぜの たにの ぼうけん』の表紙">
+      </figure>
       <div class="story-text">
         <div class="sec-head">
           <span class="kicker"><svg class="gear"><use href="#gear"/></svg>1冊目</span>
@@ -175,52 +187,58 @@ footer { padding-block: 32px 48px; border-top: 1px dashed var(--line); font-size
         <p>ネジハチは力まかせにファンを止めようとして、羽がこわれそうになります。そのときデンコがいいます。「あせらないで」。ネジハチは小さなねじを見つけて、ゆっくり回します。</p>
         <p class="kurukuru">くる、くる、きゅっ。</p>
         <p>ねじを回すこの音が、お話のなかでなんども出てきます。読み聞かせのときは、子どもといっしょに声に出してみてください。</p>
-        <dl class="price">
-          <dt>紙の本</dt><dd>1,320円（税込）・横長 21×15cm・24ページ</dd>
-          <dt>Kindle版</dt><dd>800円</dd>
+        <dl class="spec">
+          <dt>対象年齢</dt><dd>4〜7歳</dd>
+          <dt>大きさ</dt><dd>横長 約21×15cm</dd>
+          <dt>ページ</dt><dd>24ページ（おはなし11ページと、図鑑・ぬりえ・おえかき）</dd>
+          <dt>価格</dt><dd>紙の本 1,320円（税込）／Kindle版 800円</dd>
+          <dt>さく・え</dt><dd>えむこ</dd>
         </dl>
       </div>
-      <img class="book1" src="img/book1.jpg" alt="『ネジハチと かぜの たにの ぼうけん』の表紙">
+    </div>
+  </section>
+
+  <section id="sample">
+    <div class="sec-head">
+      <h2>なかを すこし 見てみる</h2>
+      <p>横長の絵の下に、短い文がつきます。</p>
+    </div>
+    <div class="samples" tabindex="0" aria-label="試し読みのページ">
+      <figure><img src="img/sample04.jpg" alt="4ページ。風がなくて こまっている森の虫たちを、ネジハチが ねじで たすけている"><figcaption>4ページ　風のない森</figcaption></figure>
+      <figure><img src="img/sample07.jpg" alt="7ページ。でんせんクワガタの デンコと であう"><figcaption>7ページ　デンコと出会う</figcaption></figure>
+      <figure><img src="img/sample09.jpg" alt="9ページ。たにの まんなかの 大きな ファン"><figcaption>9ページ　大きなファン</figcaption></figure>
     </div>
   </section>
 
   <section id="series">
     <div class="sec-head">
-      <h2>1冊ずつ、読み切りで続きます</h2>
-      <p>どの本から読んでも分かります。季節がひとつずつめぐります。</p>
+      <h2>このあとの おはなし</h2>
+      <p>1冊ずつ読み切りで、季節がひとつずつめぐります。どの本から読んでも分かります。</p>
     </div>
-    <div class="shelf">
-      <article class="vol">
-        <img class="cover" src="img/book1.jpg" alt="1さつめの表紙">
-        <span class="no">1冊目</span>
-        <h3>かぜの たにの ぼうけん</h3>
-        <span class="tag soon">まもなく発売</span>
+    <div class="next">
+      <article class="nextbook">
+        <img src="img/book2.jpg" alt="2冊目の表紙">
+        <div>
+          <span class="no">2冊目・夏</span>
+          <h3>ネジハチと みずの とまった いずみ</h3>
+          <p class="tease">なつが きた。もりの まんなかの いずみで、すいしゃが とまっていた。</p>
+          <span class="tag">準備中</span>
+        </div>
       </article>
-      <article class="vol">
-        <img class="cover" src="img/book2.jpg" alt="2さつめの表紙">
-        <span class="no">2冊目・夏</span>
-        <h3>みずの とまった いずみ</h3>
-        <span class="tag">準備中</span>
-      </article>
-      <article class="vol">
-        <img class="cover" src="img/book3.jpg" alt="3さつめの表紙">
-        <span class="no">3冊目・秋</span>
-        <h3>ほしの ランプ</h3>
-        <span class="tag">準備中</span>
-      </article>
-      <article class="vol">
-        <div class="cover blank">ふゆの森で、ゆきがいつまでもやまない。</div>
-        <span class="no">4冊目・冬</span>
-        <h3>ふゆの きせつどけい</h3>
-        <span class="tag">制作中</span>
-      </article>
-      <article class="vol">
-        <div class="cover blank">ネジハチのなかまたち<br>ぜんぶで 5さつ</div>
-        <span class="no">5冊目</span>
-        <h3>みんなの はぐるま</h3>
-        <span class="tag">制作中</span>
+      <article class="nextbook">
+        <img src="img/book3.jpg" alt="3冊目の表紙">
+        <div>
+          <span class="no">3冊目・秋</span>
+          <h3>ネジハチと ほしの ランプ</h3>
+          <p class="tease">あきの よる、チョウたちの めじるしの ほしの ランプが きえてしまった。</p>
+          <span class="tag">準備中</span>
+        </div>
       </article>
     </div>
+    <ul class="later">
+      <li><span class="no">4冊目・冬</span><span class="t">ネジハチと ふゆの きせつどけい</span><span class="tag">制作中</span></li>
+      <li><span class="no">5冊目</span><span class="t">ネジハチと みんなの はぐるま</span><span class="tag">制作中</span></li>
+    </ul>
   </section>
 
   <section id="friends">
