@@ -89,11 +89,13 @@ section { padding-block: 56px; border-top: 1px dashed var(--line); }
 .samples figcaption { font-size: 14px; color: var(--ink-soft); }
 
 /* series：次の本は小さめの表紙と、本文の書き出し */
-.next { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
-.nextbook { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 18px; align-items: start; }
+.next { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.nextbook { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 18px; align-items: start; }
 .nextbook img { width: 100%; border-radius: 2px 6px 6px 2px; box-shadow: inset 4px 0 6px -3px rgb(0 0 0 / .35), 0 8px 18px rgb(0 0 0 / .18); }
 .nextbook > div { display: grid; gap: 8px; align-content: start; }
-.nextbook h3 { font-size: 19px; }
+.nextbook h3 { font-size: 18px; }
+/* 題名と書き出しはひらがなの分かち書きなので、スペースの位置で折り返す */
+.nextbook h3, .tease { word-break: keep-all; overflow-wrap: anywhere; }
 .tease { font-family: var(--font-display); font-size: 15px; line-height: 1.9; color: var(--ink-soft); }
 .no { font-size: 13px; letter-spacing: .1em; color: var(--brass); }
 .tag { justify-self: start; font-size: 12px; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink-soft); }
@@ -107,10 +109,13 @@ section { padding-block: 56px; border-top: 1px dashed var(--line); }
 .friend img { height: 190px; width: 100%; object-fit: contain; max-width: 100%; transition: transform .4s ease; }
 .friend:hover img { transform: rotate(-4deg) translateY(-4px); }
 @media (prefers-reduced-motion: reduce) { .friend img { transition: none; } .friend:hover img { transform: none; } }
+.friend.lead { grid-column: span 2; grid-row: span 2; grid-template-rows: 1fr auto; background: var(--paper-2); border-radius: 18px; padding: 24px; }
+.friend.lead img { height: 100%; min-height: 360px; max-height: 470px; }
+.friend.lead h3 { font-size: 30px; }
+.friend.lead p { font-size: 16px; color: var(--ink); }
 .friend .mix { font-size: 13px; color: var(--brass); letter-spacing: .06em; }
 .friend h3 { font-size: 22px; }
 .friend p { font-size: 15px; color: var(--ink-soft); line-height: 1.75; }
-.friend.noimg .ph { height: 190px; display: grid; place-items: center; border: 2px dashed var(--line); border-radius: 50%; width: 190px; justify-self: center; color: var(--ink-soft); font-size: 14px; text-align: center; }
 
 /* read aloud */
 .points { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
@@ -141,6 +146,8 @@ footer { padding-block: 32px 48px; border-top: 1px dashed var(--line); font-size
   .book1 { max-width: 240px; }
   .next { grid-template-columns: minmax(0, 1fr); }
   .friends { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .friend.lead { grid-row: auto; }
+  .friend.lead img { min-height: 0; height: 280px; }
 }
 @media (max-width: 520px) {
   body { font-size: 16px; }
@@ -256,9 +263,17 @@ footer { padding-block: 32px 48px; border-top: 1px dashed var(--line); font-size
           <span class="tag">準備中</span>
         </div>
       </article>
+      <article class="nextbook">
+        <img src="img/book4.jpg" alt="4冊目の表紙">
+        <div>
+          <span class="no">4冊目・冬</span>
+          <h3>ネジハチと ふゆの きせつどけい</h3>
+          <p class="tease">ふゆが きた。もりは ゆきに うもれて、むしたちは はるを まっていた。</p>
+          <span class="tag">準備中</span>
+        </div>
+      </article>
     </div>
     <ul class="later">
-      <li><span class="no">4冊目・冬</span><span class="t">ネジハチと ふゆの きせつどけい</span><span class="tag">制作中</span></li>
       <li><span class="no">5冊目</span><span class="t">ネジハチと みんなの はぐるま</span><span class="tag">制作中</span></li>
     </ul>
   </section>
@@ -269,9 +284,9 @@ footer { padding-block: 32px 48px; border-top: 1px dashed var(--line); font-size
       <p>みんな「工具」と「虫」の組み合わせでできています。</p>
     </div>
     <div class="friends">
-      <article class="friend">
+      <article class="friend lead">
         <img src="img/nejihachi.png" alt="ネジハチ">
-        <span class="mix">ねじ × ミツバチ</span>
+        <span class="mix">主人公 ・ ねじ × ミツバチ</span>
         <h3>ネジハチ</h3>
         <p>コツコツ型。でも、大事な場面ではあわてて力にたよってしまう。</p>
       </article>
@@ -299,8 +314,8 @@ footer { padding-block: 32px 48px; border-top: 1px dashed var(--line); font-size
         <h3>ミチル</h3>
         <p>むれの先頭をとぶ、たよれる女の子。</p>
       </article>
-      <article class="friend noimg">
-        <div class="ph">4冊目で<br>登場</div>
+      <article class="friend">
+        <img src="img/tokiba.png" alt="トキばあ">
         <span class="mix">時計 × カタツムリ</span>
         <h3>トキばあ</h3>
         <p>森でいちばん年より。とてもゆっくり。</p>
