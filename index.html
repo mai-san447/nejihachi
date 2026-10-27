@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ネジハチの もり</title>
+<meta name="description" content="歯車のミツバチ「ネジハチ」の絵本シリーズ（えむこ）と、キャラクターグッズの紹介ページです。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ネジハチの もり">
+<meta property="og:description" content="歯車のミツバチ「ネジハチ」の絵本シリーズと、キャラクターグッズの紹介ページです。">
+<meta property="og:image" content="https://emko.work/nejihachi/img/hero.jpg">
+<meta property="og:url" content="https://emko.work/nejihachi/">
+<meta name="twitter:card" content="summary_large_image">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&family=Zen+Maru+Gothic:wght@400;500;700&display=swap">
+<style>
+/* Layout: 絵本の見開きのように、横長の絵の帯と、紙の上の短い文を交互に置く。歯車がゆっくり回るのが唯一の動き。 */
+:root {
+  --paper: #f6edd8;      /* 水彩紙 */
+  --paper-2: #efe1c2;    /* 文の欄のクリーム */
+  --ink: #3a2a1d;        /* セピアの線 */
+  --ink-soft: #6b5442;
+  --brass: #a8741c;      /* 真ちゅう */
+  --honey: #e3992b;      /* ネジハチの顔 */
+  --leaf: #6f9440;       /* バネッタ */
+  --line: #d8c39a;
+  --font-display: "Kiwi Maru", "Hiragino Maru Gothic ProN", "Yu Gothic", serif;
+  --font-body: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1f1b24; --paper-2: #2a2430; --ink: #f2e5c9; --ink-soft: #c9b89a;
+    --brass: #d9a845; --honey: #f0b04a; --leaf: #9cc463; --line: #4a3f4f; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1f1b24; --paper-2: #2a2430; --ink: #f2e5c9; --ink-soft: #c9b89a;
+  --brass: #d9a845; --honey: #f0b04a; --leaf: #9cc463; --line: #4a3f4f; color-scheme: dark;
+}
+
+body { background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.9; }
+.wrap { max-width: 1040px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 500; text-wrap: balance; line-height: 1.4; margin: 0; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--honey); outline-offset: 3px; border-radius: 6px; }
+
+/* hero */
+.hero-img { display: block; width: 100%; aspect-ratio: 3 / 1; object-fit: cover; max-width: 100%; }
+.hero { padding-block: 40px 56px; display: grid; gap: 20px; }
+.kicker { display: flex; align-items: center; gap: 10px; font-size: 14px; letter-spacing: .12em; color: var(--brass); }
+.hero h1 { font-size: clamp(34px, 6vw, 60px); }
+.hero h1 small { display: block; font-size: .42em; color: var(--ink-soft); letter-spacing: .08em; }
+.lead { max-width: 34em; font-size: 18px; }
+.quote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px); color: var(--ink); border-left: 4px solid var(--honey); padding-left: 16px; }
+.btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 999px; font-weight: 700; text-decoration: none; border: 2px solid var(--ink); }
+.btn.primary { background: var(--ink); color: var(--paper); }
+.btn.wait { border-style: dashed; color: var(--ink-soft); border-color: var(--ink-soft); cursor: default; }
+
+/* gear */
+.gear { width: 22px; height: 22px; flex: none; color: var(--brass); }
+.gear.spin { animation: spin 12s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .gear.spin { animation: none; } }
+
+section { padding-block: 56px; border-top: 1px dashed var(--line); }
+.sec-head { display: grid; gap: 6px; margin-bottom: 28px; }
+.sec-head h2 { font-size: clamp(26px, 4vw, 34px); }
+.sec-head p { color: var(--ink-soft); }
+
+/* story */
+.story { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 40px; align-items: start; }
+.story-text { display: grid; gap: 16px; max-width: 34em; }
+.kurukuru { font-family: var(--font-display); font-size: 22px; color: var(--brass); }
+.book1 { width: 100%; max-width: 300px; border-radius: 6px; box-shadow: 0 10px 30px rgb(0 0 0 / .18); }
+.price { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; font-size: 15px; margin-top: 8px; font-variant-numeric: tabular-nums; }
+.price dt { color: var(--ink-soft); }
+.price dd { margin: 0; }
+
+/* shelf */
+.shelf { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; }
+.vol { display: grid; gap: 10px; align-content: start; }
+.cover { aspect-ratio: 5 / 8; width: 100%; max-width: 100%; border-radius: 6px; object-fit: cover; background: var(--paper-2); }
+.cover.blank { display: grid; place-items: center; border: 2px dashed var(--line); color: var(--ink-soft); font-size: 14px; text-align: center; padding: 12px; }
+.vol .no { font-size: 13px; letter-spacing: .1em; color: var(--brass); }
+.vol h3 { font-size: 17px; }
+.vol p { font-size: 14px; color: var(--ink-soft); line-height: 1.7; }
+.tag { justify-self: start; font-size: 12px; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink-soft); }
+.tag.soon { border-color: var(--honey); color: var(--ink); background: color-mix(in srgb, var(--honey) 22%, transparent); }
+
+/* friends */
+.friends { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 20px; }
+.friend { display: grid; grid-template-rows: 190px auto; gap: 10px; }
+.friend img { height: 190px; width: 100%; object-fit: contain; max-width: 100%; transition: transform .4s ease; }
+.friend:hover img { transform: rotate(-4deg) translateY(-4px); }
+@media (prefers-reduced-motion: reduce) { .friend img { transition: none; } .friend:hover img { transform: none; } }
+.friend .mix { font-size: 13px; color: var(--brass); letter-spacing: .06em; }
+.friend h3 { font-size: 22px; }
+.friend p { font-size: 15px; color: var(--ink-soft); line-height: 1.75; }
+.friend.noimg .ph { height: 190px; display: grid; place-items: center; border: 2px dashed var(--line); border-radius: 50%; width: 190px; justify-self: center; color: var(--ink-soft); font-size: 14px; text-align: center; }
+
+/* read aloud */
+.points { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.point { background: var(--paper-2); border-radius: 14px; padding: 22px; display: grid; gap: 8px; align-content: start; }
+.point h3 { font-size: 19px; }
+.point p { font-size: 15px; line-height: 1.8; }
+
+/* goods */
+.goods { display: grid; gap: 22px; justify-items: center; text-align: center; }
+.goods img { width: 100%; max-width: 760px; }
+
+/* maker */
+.maker { display: grid; gap: 12px; max-width: 36em; }
+.note { font-size: 14px; color: var(--ink-soft); }
+footer { padding-block: 32px 48px; border-top: 1px dashed var(--line); font-size: 13px; color: var(--ink-soft); }
+
+@media (max-width: 860px) {
+  .story { grid-template-columns: minmax(0, 1fr); }
+  .book1 { max-width: 240px; }
+  .shelf { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .friends, .points { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  .shelf { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .friends, .points { grid-template-columns: minmax(0, 1fr); }
+  .hero-img { aspect-ratio: 2 / 1; }
+}
+</style>
+
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="gear" viewBox="0 0 24 24">
+    <g fill="currentColor">
+      <rect x="10.5" y="1" width="3" height="5" rx="1"/>
+      <rect x="10.5" y="1" width="3" height="5" rx="1" transform="rotate(45 12 12)"/>
+      <rect x="10.5" y="1" width="3" height="5" rx="1" transform="rotate(90 12 12)"/>
+      <rect x="10.5" y="1" width="3" height="5" rx="1" transform="rotate(135 12 12)"/>
+      <rect x="10.5" y="1" width="3" height="5" rx="1" transform="rotate(180 12 12)"/>
+      <rect x="10.5" y="1" width="3" height="5" rx="1" transform="rotate(225 12 12)"/>
+      <rect x="10.5" y="1" width="3" height="5" rx="1" transform="rotate(270 12 12)"/>
+      <rect x="10.5" y="1" width="3" height="5" rx="1" transform="rotate(315 12 12)"/>
+      <circle cx="12" cy="12" r="7.5"/>
+    </g>
+    <circle cx="12" cy="12" r="3" fill="var(--paper)"/>
+  </symbol>
+</svg>
+
+<img class="hero-img" src="img/hero.jpg" alt="ネジハチ、デンコ、ドリオ、バネッタ、ミチルが、ならんで よぞらを みあげている絵">
+
+<main class="wrap">
+  <header class="hero">
+    <div class="kicker"><svg class="gear spin"><use href="#gear"/></svg>えほん「ネジハチ」シリーズ</div>
+    <h1><small>歯車のミツバチ</small>ネジハチ</h1>
+    <p class="lead">ねじと工具でできた森の虫たちが、森のこまりごとをひとつずつ直していく絵本です。4〜7さいの子が自分で読めるように、文はぜんぶひらがなです。</p>
+    <p class="quote">「あせらないで。かぜは ゆっくり もどるんだ」</p>
+    <div class="btns">
+      <span class="btn wait" aria-disabled="true">Amazonで発売準備中</span>
+      <a class="btn primary" href="https://suzuri.jp/nejihachi" target="_blank" rel="noopener">グッズのお店へ</a>
+    </div>
+  </header>
+
+  <section id="story">
+    <div class="story">
+      <div class="story-text">
+        <div class="sec-head">
+          <span class="kicker"><svg class="gear"><use href="#gear"/></svg>1冊目</span>
+          <h2>ネジハチと かぜの たにの ぼうけん</h2>
+        </div>
+        <p>森から風がきえてしまいました。ネジハチは「かぜの たに」へむかいます。とちゅうで出会った電線のクワガタ・デンコといっしょに、谷のまん中の大きなファンにたどりつきます。</p>
+        <p>ネジハチは力まかせにファンを止めようとして、羽がこわれそうになります。そのときデンコがいいます。「あせらないで」。ネジハチは小さなねじを見つけて、ゆっくり回します。</p>
+        <p class="kurukuru">くる、くる、きゅっ。</p>
+        <p>ねじを回すこの音が、お話のなかでなんども出てきます。読み聞かせのときは、子どもといっしょに声に出してみてください。</p>
+        <dl class="price">
+          <dt>紙の本</dt><dd>1,320円（税込）・横長 21×15cm・24ページ</dd>
+          <dt>Kindle版</dt><dd>800円</dd>
+        </dl>
+      </div>
+      <img class="book1" src="img/book1.jpg" alt="『ネジハチと かぜの たにの ぼうけん』の表紙">
+    </div>
+  </section>
+
+  <section id="series">
+    <div class="sec-head">
+      <h2>1冊ずつ、読み切りで続きます</h2>
+      <p>どの本から読んでも分かります。季節がひとつずつめぐります。</p>
+    </div>
+    <div class="shelf">
+      <article class="vol">
+        <img class="cover" src="img/book1.jpg" alt="1さつめの表紙">
+        <span class="no">1冊目</span>
+        <h3>かぜの たにの ぼうけん</h3>
+        <span class="tag soon">まもなく発売</span>
+      </article>
+      <article class="vol">
+        <img class="cover" src="img/book2.jpg" alt="2さつめの表紙">
+        <span class="no">2冊目・夏</span>
+        <h3>みずの とまった いずみ</h3>
+        <span class="tag">準備中</span>
+      </article>
+      <article class="vol">
+        <img class="cover" src="img/book3.jpg" alt="3さつめの表紙">
+        <span class="no">3冊目・秋</span>
+        <h3>ほしの ランプ</h3>
+        <span class="tag">準備中</span>
+      </article>
+      <article class="vol">
+        <div class="cover blank">ふゆの森で、ゆきがいつまでもやまない。</div>
+        <span class="no">4冊目・冬</span>
+        <h3>ふゆの きせつどけい</h3>
+        <span class="tag">制作中</span>
+      </article>
+      <article class="vol">
+        <div class="cover blank">ネジハチのなかまたち<br>ぜんぶで 5さつ</div>
+        <span class="no">5冊目</span>
+        <h3>みんなの はぐるま</h3>
+        <span class="tag">制作中</span>
+      </article>
+    </div>
+  </section>
+
+  <section id="friends">
+    <div class="sec-head">
+      <h2>森のなかまたち</h2>
+      <p>みんな「工具」と「虫」の組み合わせでできています。</p>
+    </div>
+    <div class="friends">
+      <article class="friend">
+        <img src="img/nejihachi.png" alt="ネジハチ">
+        <span class="mix">ねじ × ミツバチ</span>
+        <h3>ネジハチ</h3>
+        <p>コツコツ型。でも、大事な場面ではあわてて力にたよってしまう。</p>
+      </article>
+      <article class="friend">
+        <img src="img/denko.png" alt="デンコ">
+        <span class="mix">電線 × クワガタ</span>
+        <h3>デンコ</h3>
+        <p>目がライト。おちついていて、ネジハチがあわてると止めてくれる。</p>
+      </article>
+      <article class="friend">
+        <img src="img/dorio.png" alt="ドリオ">
+        <span class="mix">ドリル × カブトムシ</span>
+        <h3>ドリオ</h3>
+        <p>力もち。止まるのがにがて。</p>
+      </article>
+      <article class="friend">
+        <img src="img/banetta.png" alt="バネッタ">
+        <span class="mix">バネ × バッタ</span>
+        <h3>バネッタ</h3>
+        <p>せっかちで、いちばんのりがしたい。</p>
+      </article>
+      <article class="friend">
+        <img src="img/michiru.png" alt="ミチル">
+        <span class="mix">方位磁石 × チョウ</span>
+        <h3>ミチル</h3>
+        <p>むれの先頭をとぶ、たよれる女の子。</p>
+      </article>
+      <article class="friend noimg">
+        <div class="ph">4冊目で<br>登場</div>
+        <span class="mix">時計 × カタツムリ</span>
+        <h3>トキばあ</h3>
+        <p>森でいちばん年より。とてもゆっくり。</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="readaloud">
+    <div class="sec-head">
+      <h2>おうちのかたへ</h2>
+    </div>
+    <div class="points">
+      <div class="point">
+        <h3>声に 出す ことば</h3>
+        <p>「くる、くる、きゅっ。」は、1さつに 3〜4かい出てきます。子どもといっしょに言ってみてください。</p>
+      </div>
+      <div class="point">
+        <h3>ひらがなで 読める</h3>
+        <p>文はぜんぶひらがなで、言葉の間をあけています。1ページは 4行までです。</p>
+      </div>
+      <div class="point">
+        <h3>小さな 部品に 注意</h3>
+        <p>巻末に「ねじってなあに？」のページがあります。ねじなどの小さな部品は、飲みこまないよう大人が見ていてください。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="goods">
+    <div class="goods">
+      <div class="sec-head">
+        <h2>グッズのお店「ネジハチのもり」</h2>
+        <p>Tシャツ、マグカップ、トートバッグ、ステッカーなど。1点から注文できます。</p>
+      </div>
+      <img src="img/goods.png" alt="ドリオ、デンコ、ネジハチ、ミチル、バネッタが 一列に ならんだ グッズの 絵">
+      <a class="btn primary" href="https://suzuri.jp/nejihachi" target="_blank" rel="noopener">SUZURIで見る</a>
+    </div>
+  </section>
+
+  <section id="maker">
+    <div class="maker">
+      <h2>つくった人</h2>
+      <p>さく・ええむこ</p>
+      <p>おはなしとキャラクターはえむこが考えました。絵は、画像生成AIを道具につかって仕上げています。</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© えむこ 2026　ネジハチの絵と文の無断転載はご遠慮ください。</div>
+</footer>
+
+</body>
+</html>
