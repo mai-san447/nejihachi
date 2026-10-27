@@ -89,8 +89,8 @@ section { padding-block: 56px; border-top: 1px dashed var(--line); }
 .samples figcaption { font-size: 14px; color: var(--ink-soft); }
 
 /* series：次の本は小さめの表紙と、本文の書き出し */
-.next { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-.nextbook { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 18px; align-items: start; }
+.next { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 32px; }
+.nextbook { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 18px; align-items: start; }
 .nextbook img { width: 100%; border-radius: 2px 6px 6px 2px; box-shadow: inset 4px 0 6px -3px rgb(0 0 0 / .35), 0 8px 18px rgb(0 0 0 / .18); }
 .nextbook > div { display: grid; gap: 8px; align-content: start; }
 .nextbook h3 { font-size: 18px; }
@@ -99,9 +99,6 @@ section { padding-block: 56px; border-top: 1px dashed var(--line); }
 .tease { font-family: var(--font-display); font-size: 15px; line-height: 1.9; color: var(--ink-soft); }
 .no { font-size: 13px; letter-spacing: .1em; color: var(--brass); }
 .tag { justify-self: start; font-size: 12px; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink-soft); }
-.later { list-style: none; padding: 0; margin: 28px 0 0; border-top: 1px solid var(--line); }
-.later li { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
-.later .t { font-family: var(--font-display); font-size: 17px; flex: 1 1 14em; min-width: 0; }
 
 /* friends */
 .friends { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 28px 18px; }
@@ -247,7 +244,7 @@ footer { padding-block: 32px 48px; border-top: 1px dashed var(--line); font-size
   <section id="series">
     <div class="sec-head">
       <h2>このあとのおはなし</h2>
-      <p>どれも1冊で終わるおはなしです。夏、秋、冬と季節が進みます。</p>
+      <p>どれも1冊で終わるおはなしです。夏、秋、冬、春と季節が進みます。</p>
     </div>
     <div class="next">
       <article class="nextbook">
@@ -277,10 +274,16 @@ footer { padding-block: 32px 48px; border-top: 1px dashed var(--line); font-size
           <span class="tag">準備中</span>
         </div>
       </article>
+      <article class="nextbook">
+        <img src="img/book5.jpg" alt="5冊目の表紙">
+        <div>
+          <span class="no">5冊目・春</span>
+          <h3>ネジハチと みんなの はぐるま</h3>
+          <p class="tease">はる、もりでは「はぐるま まつり」の じゅんびが はじまった。</p>
+          <span class="tag">準備中</span>
+        </div>
+      </article>
     </div>
-    <ul class="later">
-      <li><span class="no">5冊目</span><span class="t">ネジハチと みんなの はぐるま</span><span class="tag">制作中</span></li>
-    </ul>
   </section>
 
   <section id="friends">
