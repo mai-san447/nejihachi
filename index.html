@@ -113,7 +113,15 @@ section { padding-block: 56px; border-top: 1px dashed var(--line); }
 .friend.noimg .ph { height: 190px; display: grid; place-items: center; border: 2px dashed var(--line); border-radius: 50%; width: 190px; justify-self: center; color: var(--ink-soft); font-size: 14px; text-align: center; }
 
 /* read aloud */
-.points { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.points { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+
+/* play：お話のあとのページ */
+.plays { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.plays figure { margin: 0; display: grid; gap: 10px; align-content: start; }
+.plays img { width: 100%; border-radius: 6px; box-shadow: 0 6px 18px rgb(0 0 0 / .12); }
+.plays figcaption { font-size: 15px; line-height: 1.8; color: var(--ink-soft); }
+.plays strong { display: block; font-family: var(--font-display); font-weight: 500; font-size: 18px; color: var(--ink); }
+.kurukuru-note { margin-top: 28px; padding: 16px 20px; border-radius: 12px; background: var(--paper-2); font-size: 15px; }
 .point { background: var(--paper-2); border-radius: 14px; padding: 22px; display: grid; gap: 8px; align-content: start; }
 .point h3 { font-size: 19px; }
 .point p { font-size: 15px; line-height: 1.8; }
@@ -132,12 +140,12 @@ footer { padding-block: 32px 48px; border-top: 1px dashed var(--line); font-size
   .story { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .book1 { max-width: 240px; }
   .next { grid-template-columns: minmax(0, 1fr); }
-  .friends, .points { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .friends { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 520px) {
   body { font-size: 16px; }
   .nextbook { grid-template-columns: 100px minmax(0, 1fr); }
-  .friends, .points { grid-template-columns: minmax(0, 1fr); }
+  .friends, .points, .plays { grid-template-columns: minmax(0, 1fr); }
   .hero-img { aspect-ratio: 2 / 1; }
 }
 </style>
@@ -209,6 +217,19 @@ footer { padding-block: 32px 48px; border-top: 1px dashed var(--line); font-size
       <figure><img src="img/sample07.jpg" alt="7ページ。でんせんクワガタの デンコと であう"><figcaption>7ページ　デンコと出会う</figcaption></figure>
       <figure><img src="img/sample09.jpg" alt="9ページ。たにの まんなかの 大きな ファン"><figcaption>9ページ　大きなファン</figcaption></figure>
     </div>
+  </section>
+
+  <section id="play">
+    <div class="sec-head">
+      <h2>読んだあとも あそべる</h2>
+      <p>おはなしのあとに、図鑑とぬりえのページがあります。</p>
+    </div>
+    <div class="plays">
+      <figure><img src="img/zukan.jpg" alt="図鑑のページ。ねじ、ドライバー、ナットの絵と「ねじって なあに？」の文"><figcaption><strong>ねじと はぐるまの 図鑑</strong>おはなしに出てきた部品が、どんなしくみかを知る2ページ。</figcaption></figure>
+      <figure><img src="img/nurie.jpg" alt="ぬりえのページ。ネジハチの線画"><figcaption><strong>ぬりえ</strong>ネジハチとデンコの2ページ。好きな色でぬれます。</figcaption></figure>
+      <figure><img src="img/oekaki.jpg" alt="おえかきのページ。白いわくに「きみが つくりたい きかいを かいてみよう」"><figcaption><strong>おえかき</strong>「きみが つくりたい きかいを かいてみよう」。白いわくに自由にかけます。</figcaption></figure>
+    </div>
+    <p class="kurukuru-note">おはなしの中の「くる、くる、きゅっ。」は、1冊に3〜4回出てきます。読み聞かせのときは、子どもといっしょに声に出してみてください。</p>
   </section>
 
   <section id="series">
@@ -293,16 +314,12 @@ footer { padding-block: 32px 48px; border-top: 1px dashed var(--line); font-size
     </div>
     <div class="points">
       <div class="point">
-        <h3>声に出すことば</h3>
-        <p>「くる、くる、きゅっ。」は、1さつに 3〜4かい出てきます。子どもといっしょに言ってみてください。</p>
-      </div>
-      <div class="point">
         <h3>漢字なしで読める</h3>
         <p>文は漢字を使わず、ひらがなとカタカナだけで書いています。言葉の間をあけ、1ページは4行までです。</p>
       </div>
       <div class="point">
         <h3>ねじさがしは大人といっしょに</h3>
-        <p>巻末の図鑑には「おうちでねじをさがしてみよう」というページがあります。小さなねじを口に入れないよう、さがすときは大人がそばで見ていてください。</p>
+        <p>図鑑を読むと、本物のねじをさがしたくなる子もいます。本の中でも「さがすときは おうちの ひとと」と書いています。小さなねじを口に入れないよう、そばで見ていてください。</p>
       </div>
     </div>
   </section>
