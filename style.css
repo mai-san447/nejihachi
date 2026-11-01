@@ -142,6 +142,4 @@ footer { padding-block: 32px 48px; border-top: 1px dashed var(--line); font-size
 /* langbar：日本語と英語のページを行き来するリンク。絵の帯の上に小さく置く */
 .langbar { display: flex; justify-content: flex-end; padding-block: 8px; font-size: 14px; }
 .langbar a { text-decoration: none; padding: 4px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-soft); }
-.btns.small { margin-top: 4px; gap: 8px; }
-.btns.small .btn { padding: 6px 14px; font-size: 14px; }
 .tag.on-sale { border-color: var(--honey); color: var(--ink); background: var(--paper-2); }
