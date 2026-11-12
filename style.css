@@ -116,10 +116,11 @@ section { padding-block: 56px; border-top: 1px dashed var(--line); }
 .goods { display: grid; gap: 22px; justify-items: center; text-align: center; }
 .goods img { width: 100%; max-width: 760px; height: auto; }
 .new-goods { list-style: none; padding: 0; margin: 0; width: 100%; max-width: 620px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.new-goods li { background: #fff; border-radius: 14px; padding: 14px; display: grid; gap: 6px; align-content: start; }
+/* カードは写真に合わせて常に白地。ダークモードでも字を濃い茶にする（明るい字だと読めない） */
+.new-goods li { background: #fff; color: #3a2a1d; border-radius: 14px; padding: 14px; display: grid; gap: 6px; align-content: start; }
 .new-goods a { display: grid; gap: 8px; color: inherit; text-decoration: none; }
 .new-goods .name { font-size: 17px; font-weight: 700; word-break: keep-all; }
-.new-goods p { font-size: 14px; color: var(--ink-soft); }
+.new-goods p { font-size: 14px; color: #6b5442; }
 
 /* maker */
 .maker { display: grid; gap: 12px; max-width: 36em; }
