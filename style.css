@@ -122,6 +122,17 @@ section { padding-block: 56px; border-top: 1px dashed var(--line); }
 .new-goods .name { font-size: 17px; font-weight: 700; word-break: keep-all; }
 .new-goods p { font-size: 14px; color: #6b5442; }
 
+/* おしらせ（ヒーローの下の1行） */
+.news { margin-top: 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 15px; }
+.news span { padding: 2px 10px; border-radius: 999px; background: var(--honey); color: #3a2a1d; font-size: 13px; font-weight: 700; }
+.news a { color: var(--ink); font-weight: 700; }
+
+/* LINEスタンプ：スタンプは白いふち付きの透明PNGなので、明るい地でも暗い地でもそのまま置ける */
+.line-stamp { display: grid; gap: 22px; justify-items: center; text-align: center; }
+.stamps { list-style: none; padding: 0; margin: 0; width: 100%; max-width: 760px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.stamps img { width: 100%; height: auto; }
+@media (max-width: 520px) { .stamps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
 /* maker */
 .maker { display: grid; gap: 12px; max-width: 36em; }
 .note { font-size: 14px; color: var(--ink-soft); }
